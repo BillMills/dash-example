@@ -6,11 +6,9 @@ import pandas as pd
 
 app = dash.Dash(__name__)
 
-
 def layout():
     df = pd.read_csv('/data/data.csv')
     fig = px.line(df, x="Time", y="Power Level", color='Cat', title='Cat Power level Evolution')
-
     return html.Div(children=[
         html.H1(children='Hello Dash'),
 
