@@ -28,7 +28,7 @@ def stripnum(text):
         return text
 
 def layout():
-    df = pd.read_csv('/data/xx.csv', sep=",", converters={0: strip, 1: strip, 2: stripnum})  
+    df = pd.read_csv('/data/data.csv', sep=",", converters={0: strip, 1: strip, 2: stripnum})  
     df['Date']= pd.to_datetime(df['Date'], format= '%Y-%m-%dT%H:%M:%S.%f+00:00')
     print(df.columns[0])
     fig = px.line(df, x=df.columns[1], y=df.columns[2], color=df.columns[0], title=df.columns[1] + ' vs ' + df.columns[2] + ' per ' + df.columns[0])
