@@ -33,11 +33,7 @@ def layout():
     print(df.columns[0])
     fig = px.line(df, x=df.columns[1], y=df.columns[2], color=df.columns[0], title=df.columns[1] + ' vs ' + df.columns[2] + ' per ' + df.columns[0])
     return html.Div(children=[
-        html.H1(children='Hello Dash'),
-
-        html.Div(children='''
-            Dash: A web application framework for your data.
-        '''),
+        html.H1(children='Classes @ NYC Resistor'),
 
         dcc.Graph(id='example-graph', figure=fig)
     ])
